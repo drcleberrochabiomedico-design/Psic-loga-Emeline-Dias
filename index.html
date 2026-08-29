@@ -9,188 +9,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
     <style>
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      body { font-family: 'Inter', sans-serif; color: #1E293B; }
-      .font-heading { font-family: 'Playfair Display', serif; }
-
-      :root {
-        --primary: #6366F1;
-        --primary-dark: #4F46E5;
-        --accent: #25D366;
-        --dark: #0F172A;
-        --dark-card: #1E293B;
-        --light: #F8FAFC;
-        --white: #FFFFFF;
-        --text-muted: #94A3B8;
-        --text-body: #64748B;
-      }
-
-      .hero-bg {
-        background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #312E81 100%);
-        position: relative;
-        overflow: hidden;
-      }
-      .hero-bg::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -20%;
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%);
-        border-radius: 50%;
-      }
-      .hero-bg::after {
-        content: '';
-        position: absolute;
-        bottom: -30%;
-        left: -10%;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(37,211,102,0.08) 0%, transparent 70%);
-        border-radius: 50%;
-      }
-
-      .whatsapp-btn {
-        background-color: var(--accent);
-        color: white;
-        padding: 14px 28px;
-        border-radius: 12px;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 16px;
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(37,211,102,0.3);
-      }
-      .whatsapp-btn:hover {
-        background-color: #1EBE57;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(37,211,102,0.4);
-      }
-      .whatsapp-btn svg { width: 22px; height: 22px; fill: currentColor; }
-
-      .whatsapp-float {
-        position: fixed;
-        bottom: 24px;
-        right: 24px;
-        width: 64px;
-        height: 64px;
-        background-color: var(--accent);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-        z-index: 999;
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-      .whatsapp-float:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 25px rgba(37,211,102,0.5);
-      }
-      .whatsapp-float svg { width: 36px; height: 36px; fill: white; }
-
-      .card-hover {
-        transition: all 0.3s ease;
-      }
-      .card-hover:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 40px rgba(0,0,0,0.12);
-      }
-
-      .specialty-card {
-        position: relative;
-        overflow: hidden;
-      }
-      .specialty-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 4px;
-        height: 100%;
-        background: var(--primary);
-        border-radius: 0 4px 4px 0;
-      }
-
-      .step-number {
-        width: 56px;
-        height: 56px;
-        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        font-weight: 700;
-        font-size: 20px;
-        font-family: 'Playfair Display', serif;
-      }
-
-      .contact-card {
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 16px;
-        padding: 20px;
-        text-align: center;
-        transition: all 0.3s ease;
-      }
-      .contact-card:hover {
-        background: rgba(255,255,255,0.1);
-        border-color: var(--primary);
-      }
-
-      .social-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-        text-decoration: none;
-      }
-      .social-icon:hover { transform: translateY(-2px); }
-
-      .testimonial-card {
-        position: relative;
-      }
-      .testimonial-card::before {
-        content: '\201C';
-        position: absolute;
-        top: 12px;
-        right: 20px;
-        font-size: 60px;
-        color: rgba(99,102,241,0.15);
-        font-family: 'Playfair Display', serif;
-        line-height: 1;
-      }
-
-      @keyframes pulse-green {
-        0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.4); }
-        50% { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
-      }
-      .whatsapp-float { animation: pulse-green 2s infinite; }
-
-      section { scroll-margin-top: 80px; }
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      body{font-family:'Inter',sans-serif;color:#1E293B}
+      .font-heading{font-family:'Playfair Display',serif}
+      :root{--primary:#6366F1;--primary-dark:#4F46E5;--accent:#25D366;--dark:#0F172A;--dark-card:#1E293B;--light:#F8FAFC;--white:#FFFFFF;--text-muted:#94A3B8;--text-body:#64748B}
+      .hero-bg{background:linear-gradient(135deg,#0F172A 0%,#1E1B4B 50%,#312E81 100%);position:relative;overflow:hidden}
+      .hero-bg::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,.15) 0%,transparent 70%);border-radius:50%}
+      .hero-bg::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(37,211,102,.08) 0%,transparent 70%);border-radius:50%}
+      .whatsapp-btn{background-color:var(--accent);color:#fff;padding:14px 28px;border-radius:12px;text-decoration:none;font-weight:600;font-size:16px;display:inline-flex;align-items:center;gap:10px;transition:all .3s ease;box-shadow:0 4px 15px rgba(37,211,102,.3)}
+      .whatsapp-btn:hover{background-color:#1EBE57;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,.4)}
+      .whatsapp-btn svg{width:22px;height:22px;fill:currentColor}
+      .whatsapp-float{position:fixed;bottom:24px;right:24px;width:64px;height:64px;background-color:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;transition:all .3s ease;text-decoration:none}
+      .whatsapp-float:hover{transform:scale(1.1);box-shadow:0 6px 25px rgba(37,211,102,.5)}
+      .whatsapp-float svg{width:36px;height:36px;fill:#fff}
+      .card-hover{transition:all .3s ease}
+      .card-hover:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.12)}
+      .specialty-card{position:relative;overflow:hidden}
+      .specialty-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--primary);border-radius:0 4px 4px 0}
+      .step-number{width:56px;height:56px;background:linear-gradient(135deg,var(--primary),var(--primary-dark));border-radius:16px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;font-family:'Playfair Display',serif}
+      .contact-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px;text-align:center;transition:all .3s ease}
+      .contact-card:hover{background:rgba(255,255,255,.1);border-color:var(--primary)}
+      .social-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;transition:all .3s ease;text-decoration:none}
+      .social-icon:hover{transform:translateY(-2px)}
+      .testimonial-card{position:relative}
+      .testimonial-card::before{content:'\201C';position:absolute;top:12px;right:20px;font-size:60px;color:rgba(99,102,241,.15);font-family:'Playfair Display',serif;line-height:1}
+      @keyframes pulse-green{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.4)}50%{box-shadow:0 0 0 12px rgba(37,211,102,0)}}
+      .whatsapp-float{animation:pulse-green 2s infinite}
+      section{scroll-margin-top:80px}
+      .faq-item{border-bottom:1px solid #E2E8F0;padding:20px 0;cursor:pointer}
+      .faq-item:last-child{border-bottom:none}
+      .faq-answer{display:none;padding:12px 0 0;color:#64748B;font-size:15px;line-height:1.7}
+      .faq-item.active .faq-answer{display:block}
+      .faq-item.active .faq-icon{transform:rotate(45deg)}
+      .faq-icon{transition:transform .3s ease;font-size:24px;color:var(--primary)}
+      .stat-card{text-align:center;padding:32px 20px;background:white;border-radius:16px;border:1px solid #E2E8F0}
+      .stat-number{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--primary);line-height:1}
+      .stat-label{color:#64748B;font-size:14px;margin-top:8px}
     </style>
   </head>
   <body>
 
     <!-- NAVBAR -->
-    <nav style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,23,42,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,0.05);">
-      <div style="max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;">
-        <a href="#" class="font-heading" style="color:white;font-size:22px;text-decoration:none;">Emeline Dias</a>
-        <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap;">
-          <a href="#sobre" style="color:#94A3B8;text-decoration:none;font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94A3B8'">Início</a>
-          <a href="#especialidades" style="color:#94A3B8;text-decoration:none;font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94A3B8'">Especialidades</a>
-          <a href="#depoimentos" style="color:#94A3B8;text-decoration:none;font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94A3B8'">Depoimentos</a>
-          <a href="#contato" style="color:#94A3B8;text-decoration:none;font-size:14px;transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#94A3B8'">Contato</a>
-          <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="whatsapp-btn" style="padding:10px 20px;font-size:14px;">
+    <nav style="position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,23,42,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between">
+        <a href="#" class="font-heading" style="color:#fff;font-size:22px;text-decoration:none">Emeline Dias</a>
+        <div style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+          <a href="#sobre" style="color:#94A3B8;text-decoration:none;font-size:14px">Início</a>
+          <a href="#sintomas" style="color:#94A3B8;text-decoration:none;font-size:14px">Sintomas</a>
+          <a href="#especialidades" style="color:#94A3B8;text-decoration:none;font-size:14px">Especialidades</a>
+          <a href="#depoimentos" style="color:#94A3B8;text-decoration:none;font-size:14px">Depoimentos</a>
+          <a href="#contato" style="color:#94A3B8;text-decoration:none;font-size:14px">Contato</a>
+          <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="whatsapp-btn" style="padding:10px 20px;font-size:14px">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Agendar
           </a>
@@ -199,90 +68,103 @@
     </nav>
 
     <!-- HERO -->
-    <section class="hero-bg" style="min-height:100vh;display:flex;align-items:center;padding:120px 24px 80px;">
-      <div style="max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;">
+    <section class="hero-bg" style="min-height:100vh;display:flex;align-items:center;padding:120px 24px 80px">
+      <div style="max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1">
         <div>
-          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);border-radius:100px;padding:8px 16px;margin-bottom:24px;">
-            <span style="width:8px;height:8px;background:#25D366;border-radius:50%;display:inline-block;"></span>
-              <span style="color:#A5B4FC;font-size:13px;font-weight:500;">16 mil+ mulheres já passaram por aqui</span>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.3);border-radius:100px;padding:8px 16px;margin-bottom:24px">
+            <span style="width:8px;height:8px;background:#25D366;border-radius:50%;display:inline-block"></span>
+            <span style="color:#A5B4FC;font-size:13px;font-weight:500">16 mil+ mulheres já passaram por aqui</span>
           </div>
-          <h1 class="font-heading" style="color:white;font-size:48px;line-height:1.15;margin-bottom:20px;">
-            A ansiedade não é sua inimiga
-          </h1>
-          <p style="color:#94A3B8;font-size:18px;line-height:1.7;margin-bottom:32px;max-width:520px;">
-            Ajudo mulheres a pensar menos, descansar melhor e não precisar controlar tudo. Terapia Cognitivo-Comportamental (TCC) baseada em evidências.
-          </p>
-          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:32px;">
-            <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="whatsapp-btn" style="font-size:17px;padding:16px 32px;">
+          <h1 class="font-heading" style="color:#fff;font-size:48px;line-height:1.15;margin-bottom:20px">A ansiedade não é sua inimiga</h1>
+          <p style="color:#94A3B8;font-size:18px;line-height:1.7;margin-bottom:32px;max-width:520px">Ajudo mulheres a pensar menos, descansar melhor e não precisar controlar tudo. Terapia Cognitivo-Comportamental (TCC) baseada em evidências.</p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:32px">
+            <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="whatsapp-btn" style="font-size:17px;padding:16px 32px">
               <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
               Agendar Sessão Gratuita
             </a>
           </div>
-          <div style="display:flex;gap:24px;flex-wrap:wrap;">
-            <div style="display:flex;align-items:center;gap:8px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span style="color:#CBD5E1;font-size:14px;">CRP 14/05649</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span style="color:#CBD5E1;font-size:14px;">10+ Anos</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span style="color:#CBD5E1;font-size:14px;">Primeira Sessão Grátis</span>
-            </div>
+          <div style="display:flex;gap:24px;flex-wrap:wrap">
+            <div style="display:flex;align-items:center;gap:8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span style="color:#CBD5E1;font-size:14px">CRP 14/05649</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span style="color:#CBD5E1;font-size:14px">Especialista TCC</span></div>
+            <div style="display:flex;align-items:center;gap:8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span style="color:#CBD5E1;font-size:14px">Primeira Sessão Grátis</span></div>
           </div>
         </div>
-        <div style="display:flex;justify-content:center;">
-          <div style="width:380px;height:460px;background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(37,211,102,0.1));border-radius:24px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
-            <div style="width:120px;height:120px;background:linear-gradient(135deg,var(--primary),#818CF8);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-            </div>
-            <p style="color:#94A3B8;font-size:14px;text-align:center;padding:0 20px;">Sua foto profissional aqui</p>
+        <div style="display:flex;justify-content:center">
+          <div style="width:380px;height:460px;background:linear-gradient(135deg,rgba(99,102,241,.2),rgba(37,211,102,.1));border-radius:24px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px">
+            <div style="width:120px;height:120px;background:linear-gradient(135deg,var(--primary),#818CF8);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="60" height="60" viewBox="0 0 24 24" fill="#fff"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div>
+            <p style="color:#94A3B8;font-size:14px;text-align:center;padding:0 20px">Sua foto profissional aqui</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROVA SOCIAL (NÚMEROS) -->
+    <section style="background:var(--dark);padding:60px 24px;border-bottom:1px solid rgba(255,255,255,.05)">
+      <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+        <div class="stat-card" style="background:var(--dark-card);border-color:rgba(255,255,255,.1)">
+          <div class="stat-number" style="color:#818CF8">16K+</div>
+          <div class="stat-label" style="color:#94A3B8">Mulheres atendidas</div>
+        </div>
+        <div class="stat-card" style="background:var(--dark-card);border-color:rgba(255,255,255,.1)">
+          <div class="stat-number" style="color:#818CF8">10+</div>
+          <div class="stat-label" style="color:#94A3B8">Anos de experiência</div>
+        </div>
+        <div class="stat-card" style="background:var(--dark-card);border-color:rgba(255,255,255,.1)">
+          <div class="stat-number" style="color:#818CF8">100%</div>
+          <div class="stat-label" style="color:#94A3B8">Online</div>
+        </div>
+        <div class="stat-card" style="background:var(--dark-card);border-color:rgba(255,255,255,.1)">
+          <div class="stat-number" style="color:#818CF8">5★</div>
+          <div class="stat-label" style="color:#94A3B8">Avaliações</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SINTOMAS / CHECKLIST -->
+    <section id="sintomas" style="background:#F8FAFC;padding:100px 24px">
+      <div style="max-width:900px;margin:0 auto">
+        <div style="text-align:center;margin-bottom:48px">
+          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Checklist</span>
+          <h2 class="font-heading" style="font-size:40px;margin-top:12px">Com quantas dessas situações você se identifica?</h2>
+        </div>
+        <div style="background:#fff;border-radius:20px;padding:40px;border:1px solid #E2E8F0;box-shadow:0 4px 20px rgba(0,0,0,.05)">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div style="display:flex;align-items:flex-start;gap:16px;padding:16px;background:#F8FAFC;border-radius:12px"><div style="min-width:28px;height:28px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-top:2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><p style="font-size:16px;line-height:1.6;color:#1E293B">Sua cabeça <strong>não desliga</strong> nem à noite? Você deita e começa a repassar o dia inteiro, o que fez, o que faltou e o que pode dar errado.</p></div>
+            <div style="display:flex;align-items:flex-start;gap:16px;padding:16px;background:#F8FAFC;border-radius:12px"><div style="min-width:28px;height:28px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-top:2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><p style="font-size:16px;line-height:1.6;color:#1E293B">Você acorda <strong>cansada</strong> mesmo tendo dormido, ou passa noites em claro sem conseguir parar de pensar.</p></div>
+            <div style="display:flex;align-items:flex-start;gap:16px;padding:16px;background:#F8FAFC;border-radius:12px"><div style="min-width:28px;height:28px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-top:2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><p style="font-size:16px;line-height:1.6;color:#1E293B">Sente <strong>nó na garganta</strong>, aperto no peito ou tensão no corpo sem motivo aparente.</p></div>
+            <div style="display:flex;align-items:flex-start;gap:16px;padding:16px;background:#F8FAFC;border-radius:12px"><div style="min-width:28px;height:28px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-top:2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><p style="font-size:16px;line-height:1.6;color:#1E293B">Tem <strong>crises de choro</strong> ou irritação desproporcional a situações pequenas do dia a dia.</p></div>
+            <div style="display:flex;align-items:flex-start;gap:16px;padding:16px;background:#F8FAFC;border-radius:12px"><div style="min-width:28px;height:28px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-top:2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><p style="font-size:16px;line-height:1.6;color:#1E293B">Sente que vive no <strong>"piloto automático"</strong>, sem brilho nos olhos ou propósito.</p></div>
+            <div style="display:flex;align-items:flex-start;gap:16px;padding:16px;background:#F8FAFC;border-radius:12px"><div style="min-width:28px;height:28px;background:var(--primary);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-top:2px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><p style="font-size:16px;line-height:1.6;color:#1E293B">Repete os mesmos <strong>padrões destrutivos</strong> nos relacionamentos ou no trabalho, sem entender por quê.</p></div>
+          </div>
+          <div style="margin-top:32px;padding:24px;background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(37,211,102,.05));border-radius:16px;text-align:center;border:1px solid rgba(99,102,241,.2)">
+            <p style="font-size:17px;color:#1E293B;margin-bottom:20px"><strong>Se você se identificou com 2 ou mais situações,</strong> saiba que isso não é "frescura" ou "coisa da sua cabeça". Seu corpo e sua mente estão pedindo ajuda.</p>
+            <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Me%20identifiquei%20com%20v%C3%A1rios%20sintomas%20e%20gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="whatsapp-btn" style="font-size:17px;padding:16px 36px">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Toque aqui e agende sua consulta
+            </a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- SOBRE -->
-    <section id="sobre" style="background:#F8FAFC;padding:100px 24px;">
-      <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
-        <div style="display:flex;justify-content:center;">
-          <div style="width:100%;max-width:460px;height:420px;background:linear-gradient(135deg,#E0E7FF,#F0F9FF);border-radius:24px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;position:relative;overflow:hidden;">
-            <div style="width:120px;height:120px;background:linear-gradient(135deg,var(--primary),#818CF8);border-radius:50%;display:flex;align-items:center;justify-content:center;">
-              <svg width="60" height="60" viewBox="0 0 24 24" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-            </div>
-            <p style="color:#6366F1;font-size:14px;font-weight:500;">[Sua Foto Profissional]</p>
-          </div>
+    <section id="sobre" style="background:#fff;padding:100px 24px">
+      <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+        <div style="display:flex;justify-content:center">
+          <div style="width:100%;max-width:460px;height:420px;background:linear-gradient(135deg,#E0E7FF,#F0F9FF);border-radius:24px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px"><div style="width:120px;height:120px;background:linear-gradient(135deg,var(--primary),#818CF8);border-radius:50%;display:flex;align-items:center;justify-content:center"><svg width="60" height="60" viewBox="0 0 24 24" fill="#fff"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg></div><p style="color:#6366F1;font-size:14px;font-weight:500">[Sua Foto Profissional]</p></div>
         </div>
         <div>
-          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;">Quem é a Emeline</span>
-          <h2 class="font-heading" style="font-size:36px;margin:12px 0 20px;line-height:1.2;">Ajudo mulheres a pensar menos e descansar melhor</h2>
-          <p style="color:#64748B;font-size:16px;line-height:1.8;margin-bottom:24px;">
-            Sou psicóloga clínica especializada em Terapia Cognitivo-Comportamental (TCC). Meu foco é ajudar mulheres que sentem que a cabeça não desliga, que pensam demais e tentam controlar tudo ao mesmo tempo.
-          </p>
-          <p style="color:#64748B;font-size:16px;line-height:1.8;margin-bottom:32px;">
-            Seu corpo está exausto, mas sua cabeça continua pensando no que aconteceu hoje, no que faltou fazer e no que precisa resolver amanhã. Eu te ajudo a "desligar" e a encontrar equilíbrio de verdade.
-          </p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px;">
-            <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:white;border-radius:12px;border:1px solid #E2E8F0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span style="font-size:14px;font-weight:500;">CRP 14/05649</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:white;border-radius:12px;border:1px solid #E2E8F0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span style="font-size:14px;font-weight:500;">Especialista TCC</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:white;border-radius:12px;border:1px solid #E2E8F0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span style="font-size:14px;font-weight:500;">Atendimento Online</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:white;border-radius:12px;border:1px solid #E2E8F0;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <span style="font-size:14px;font-weight:500;">16K+ Seguidoras</span>
-            </div>
+          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Quem é a Emeline</span>
+          <h2 class="font-heading" style="font-size:36px;margin:12px 0 20px;line-height:1.2">Ajudo mulheres a pensar menos e descansar melhor</h2>
+          <p style="color:#64748B;font-size:16px;line-height:1.8;margin-bottom:24px">Sou psicóloga clínica especializada em Terapia Cognitivo-Comportamental (TCC). Meu foco é ajudar mulheres que sentem que a cabeça não desliga, que pensam demais e tentam controlar tudo ao mesmo tempo.</p>
+          <p style="color:#64748B;font-size:16px;line-height:1.8;margin-bottom:32px">Seu corpo está exausto, mas sua cabeça continua pensando no que aconteceu hoje, no que faltou fazer e no que precisa resolver amanhã. Eu te ajudo a "desligar" e a encontrar equilíbrio de verdade.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px">
+            <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#F8FAFC;border-radius:12px;border:1px solid #E2E8F0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span style="font-size:14px;font-weight:500">CRP 14/05649</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#F8FAFC;border-radius:12px;border:1px solid #E2E8F0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span style="font-size:14px;font-weight:500">Especialista TCC</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#F8FAFC;border-radius:12px;border:1px solid #E2E8F0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span style="font-size:14px;font-weight:500">Atendimento Online</span></div>
+            <div style="display:flex;align-items:center;gap:10px;padding:12px 16px;background:#F8FAFC;border-radius:12px;border:1px solid #E2E8F0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span style="font-size:14px;font-weight:500">16K+ Seguidoras</span></div>
           </div>
-          <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento." target="_blank" class="whatsapp-btn" style="text-decoration:none;">
+          <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20o%20atendimento." target="_blank" class="whatsapp-btn" style="text-decoration:none">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Saiba Mais Sobre Mim
           </a>
@@ -290,49 +172,64 @@
       </div>
     </section>
 
+    <!-- COMO FUNCIONA -->
+    <section style="background:var(--dark);padding:100px 24px">
+      <div style="max-width:1200px;margin:0 auto">
+        <div style="text-align:center;margin-bottom:60px">
+          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Como Funciona</span>
+          <h2 class="font-heading" style="color:#fff;font-size:40px;margin-top:12px">Seu Caminho Para o Bem-Estar</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+          <div style="background:var(--dark-card);border-radius:16px;padding:32px;text-align:center;border:1px solid rgba(255,255,255,.05)" class="card-hover">
+            <div class="step-number" style="margin:0 auto 20px">01</div>
+            <h3 style="color:#fff;font-size:18px;margin-bottom:12px;font-weight:600">Agende Sua Consulta</h3>
+            <p style="color:#94A3B8;font-size:14px;line-height:1.7">Escolha o melhor horário para você via WhatsApp. Atendimento flexível para se adequar à sua rotina.</p>
+          </div>
+          <div style="background:var(--dark-card);border-radius:16px;padding:32px;text-align:center;border:1px solid rgba(255,255,255,.05)" class="card-hover">
+            <div class="step-number" style="margin:0 auto 20px">02</div>
+            <h3 style="color:#fff;font-size:18px;margin-bottom:12px;font-weight:600">Sessão Online</h3>
+            <p style="color:#94A3B8;font-size:14px;line-height:1.7">Realize sua sessão pelo videochamada no conforto da sua casa. Ambiente seguro e sigiloso.</p>
+          </div>
+          <div style="background:var(--dark-card);border-radius:16px;padding:32px;text-align:center;border:1px solid rgba(255,255,255,.05)" class="card-hover">
+            <div class="step-number" style="margin:0 auto 20px">03</div>
+            <h3 style="color:#fff;font-size:18px;margin-bottom:12px;font-weight:600">Resultados</h3>
+            <p style="color:#94A3B8;font-size:14px;line-height:1.7">Acompanhe sua evolução e conquiste uma vida com menos ansiedade e mais qualidade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ESPECIALIDADES -->
-    <section id="especialidades" style="background:var(--dark);padding:100px 24px;">
-      <div style="max-width:1200px;margin:0 auto;">
-        <div style="text-align:center;margin-bottom:60px;">
-          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;">Especialidades</span>
-          <h2 class="font-heading" style="color:white;font-size:40px;margin-top:12px;">Como a TCC Pode Te Ajudar</h2>
+    <section id="especialidades" style="background:#F8FAFC;padding:100px 24px">
+      <div style="max-width:1200px;margin:0 auto">
+        <div style="text-align:center;margin-bottom:60px">
+          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Especialidades</span>
+          <h2 class="font-heading" style="font-size:40px;margin-top:12px">Como a TCC Pode Te Ajudar</h2>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
-          <!-- Ansiedade -->
-          <div class="card-hover specialty-card" style="background:var(--dark-card);border-radius:16px;padding:32px 24px;">
-            <div style="width:56px;height:56px;background:rgba(99,102,241,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </div>
-            <h3 style="color:white;font-size:20px;margin-bottom:12px;font-weight:600;">Pensamentos Acelerados</h3>
-            <p style="color:#94A3B8;font-size:14px;line-height:1.7;">Aprenda a desacelerar sua mente e a não deixar os pensamentos tomarem conta de você.</p>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+          <div class="card-hover specialty-card" style="background:#fff;border-radius:16px;padding:32px 24px;border:1px solid #E2E8F0">
+            <div style="width:56px;height:56px;background:rgba(99,102,241,.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <h3 style="font-size:18px;margin-bottom:12px;font-weight:600">Pensamentos Acelerados</h3>
+            <p style="color:#64748B;font-size:14px;line-height:1.7">Aprenda a desacelerar sua mente e a não deixar os pensamentos tomarem conta de você.</p>
           </div>
-          <!-- Insônia -->
-          <div class="card-hover specialty-card" style="background:var(--dark-card);border-radius:16px;padding:32px 24px;">
-            <div style="width:56px;height:56px;background:rgba(99,102,241,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            </div>
-            <h3 style="color:white;font-size:20px;margin-bottom:12px;font-weight:600;">Insônia</h3>
-            <p style="color:#94A3B8;font-size:14px;line-height:1.7;">Você deita e sua cabeça começa a repassar o dia inteiro? Vamos resolver isso juntas.</p>
+          <div class="card-hover specialty-card" style="background:#fff;border-radius:16px;padding:32px 24px;border:1px solid #E2E8F0">
+            <div style="width:56px;height:56px;background:rgba(99,102,241,.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></div>
+            <h3 style="font-size:18px;margin-bottom:12px;font-weight:600">Insônia</h3>
+            <p style="color:#64748B;font-size:14px;line-height:1.7">Você deita e sua cabeça começa a repassar o dia inteiro? Vamos resolver isso juntas.</p>
           </div>
-          <!-- Controle -->
-          <div class="card-hover specialty-card" style="background:var(--dark-card);border-radius:16px;padding:32px 24px;">
-            <div style="width:56px;height:56px;background:rgba(99,102,241,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-            </div>
-            <h3 style="color:white;font-size:20px;margin-bottom:12px;font-weight:600;">Precisar Controlar Tudo</h3>
-            <p style="color:#94A3B8;font-size:14px;line-height:1.7;">Aprenda a soltar o controle e confiar no processo da vida sem precisar antecipar tudo.</p>
+          <div class="card-hover specialty-card" style="background:#fff;border-radius:16px;padding:32px 24px;border:1px solid #E2E8F0">
+            <div style="width:56px;height:56px;background:rgba(99,102,241,.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+            <h3 style="font-size:18px;margin-bottom:12px;font-weight:600">Precisar Controlar Tudo</h3>
+            <p style="color:#64748B;font-size:14px;line-height:1.7">Aprenda a soltar o controle e confiar no processo da vida sem precisar antecipar tudo.</p>
           </div>
-          <!-- Exaustão -->
-          <div class="card-hover specialty-card" style="background:var(--dark-card);border-radius:16px;padding:32px 24px;">
-            <div style="width:56px;height:56px;background:rgba(99,102,241,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            </div>
-            <h3 style="color:white;font-size:20px;margin-bottom:12px;font-weight:600;">Exaustão Emocional</h3>
-            <p style="color:#94A3B8;font-size:14px;line-height:1.7;">Seu corpo está exausto mas sua cabeça não para? Reconecte-se com você mesma.</p>
+          <div class="card-hover specialty-card" style="background:#fff;border-radius:16px;padding:32px 24px;border:1px solid #E2E8F0">
+            <div style="width:56px;height:56px;background:rgba(99,102,241,.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+            <h3 style="font-size:18px;margin-bottom:12px;font-weight:600">Exaustão Emocional</h3>
+            <p style="color:#64748B;font-size:14px;line-height:1.7">Seu corpo está exausto mas sua cabeça não para? Reconecte-se com você mesma.</p>
           </div>
         </div>
-        <div style="text-align:center;margin-top:48px;">
-          <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20as%20especialidades." target="_blank" class="whatsapp-btn" style="font-size:17px;padding:16px 36px;">
+        <div style="text-align:center;margin-top:48px">
+          <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20as%20especialidades." target="_blank" class="whatsapp-btn" style="font-size:17px;padding:16px 36px">
             <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             Quero Saber Mais
           </a>
@@ -340,141 +237,116 @@
       </div>
     </section>
 
-    <!-- COMO FUNCIONA -->
-    <section style="background:#F8FAFC;padding:100px 24px;">
-      <div style="max-width:1200px;margin:0 auto;">
-        <div style="text-align:center;margin-bottom:60px;">
-          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;">Como Funciona</span>
-          <h2 class="font-heading" style="font-size:40px;margin-top:12px;">Seu Caminho Para o Bem-Estar</h2>
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" style="background:#fff;padding:100px 24px">
+      <div style="max-width:1200px;margin:0 auto">
+        <div style="text-align:center;margin-bottom:60px">
+          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Depoimentos</span>
+          <h2 class="font-heading" style="font-size:40px;margin-top:12px">O Que Dizem Nossas Pacientes</h2>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
-          <div style="background:white;border-radius:16px;padding:32px 24px;border:1px solid #E2E8F0;text-align:center;" class="card-hover">
-            <div class="step-number" style="margin:0 auto 20px;">01</div>
-            <h3 style="font-size:18px;margin-bottom:12px;font-weight:600;">Agende Sua Consulta</h3>
-            <p style="color:#64748B;font-size:14px;line-height:1.7;">Escolha o melhor horário para você. Atendimento flexível para se adequar à sua rotina.</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+          <div class="card-hover testimonial-card" style="background:#F8FAFC;border-radius:16px;padding:32px;border:1px solid #E2E8F0">
+            <div style="color:#FBBF24;font-size:18px;margin-bottom:16px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p style="color:#1E293B;font-size:15px;line-height:1.8;margin-bottom:20px">"A Emeline me ajudou a superar uma ansiedade que me acompanhava há anos. O tratamento é profissional e muito acolhedor."</p>
+            <div style="display:flex;align-items:center;gap:12px"><div style="width:44px;height:44px;background:linear-gradient(135deg,#6366F1,#818CF8);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:16px">M</div><div><p style="font-size:14px;font-weight:600">M.S.</p><p style="color:#64748B;font-size:13px">São Paulo</p></div></div>
           </div>
-          <div style="background:white;border-radius:16px;padding:32px 24px;border:1px solid #E2E8F0;text-align:center;" class="card-hover">
-            <div class="step-number" style="margin:0 auto 20px;">02</div>
-            <h3 style="font-size:18px;margin-bottom:12px;font-weight:600;">Sessão Online</h3>
-            <p style="color:#64748B;font-size:14px;line-height:1.7;">Realize sua sessão pelo videochamada no conforto da sua casa. Ambiente seguro e sigiloso.</p>
+          <div class="card-hover testimonial-card" style="background:#F8FAFC;border-radius:16px;padding:32px;border:1px solid #E2E8F0">
+            <div style="color:#FBBF24;font-size:18px;margin-bottom:16px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p style="color:#1E293B;font-size:15px;line-height:1.8;margin-bottom:20px">"O atendimento online é muito prático. Recebi ferramentas reais que uso no dia a dia para controlar meus pensamentos negativos."</p>
+            <div style="display:flex;align-items:center;gap:12px"><div style="width:44px;height:44px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:16px">R</div><div><p style="font-size:14px;font-weight:600">R.L.</p><p style="color:#64748B;font-size:13px">Rio de Janeiro</p></div></div>
           </div>
-          <div style="background:white;border-radius:16px;padding:32px 24px;border:1px solid #E2E8F0;text-align:center;" class="card-hover">
-            <div class="step-number" style="margin:0 auto 20px;">03</div>
-            <h3 style="font-size:18px;margin-bottom:12px;font-weight:600;">Plano Personalizado</h3>
-            <p style="color:#64748B;font-size:14px;line-height:1.7;">Receba um tratamento individualizado baseado em suas necessidades específicas.</p>
-          </div>
-          <div style="background:white;border-radius:16px;padding:32px 24px;border:1px solid #E2E8F0;text-align:center;" class="card-hover">
-            <div class="step-number" style="margin:0 auto 20px;">04</div>
-            <h3 style="font-size:18px;margin-bottom:12px;font-weight:600;">Resultados</h3>
-            <p style="color:#64748B;font-size:14px;line-height:1.7;">Acompanhe sua evolução e conquiste uma saúde mental mais robusta e duradoura.</p>
+          <div class="card-hover testimonial-card" style="background:#F8FAFC;border-radius:16px;padding:32px;border:1px solid #E2E8F0">
+            <div style="color:#FBBF24;font-size:18px;margin-bottom:16px">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p style="color:#1E293B;font-size:15px;line-height:1.8;margin-bottom:20px">"Finalmente durmo em paz. O tratamento para insônia da Emeline mudou minha qualidade de vida completamente."</p>
+            <div style="display:flex;align-items:center;gap:12px"><div style="width:44px;height:44px;background:linear-gradient(135deg,#F59E0B,#D97706);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:16px">A</div><div><p style="font-size:14px;font-weight:600">A.C.</p><p style="color:#64748B;font-size:13px">Belo Horizonte</p></div></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DEPOIMENTOS -->
-    <section id="depoimentos" style="background:var(--dark);padding:100px 24px;">
-      <div style="max-width:1200px;margin:0 auto;">
-        <div style="text-align:center;margin-bottom:60px;">
-          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;">Depoimentos</span>
-          <h2 class="font-heading" style="color:white;font-size:40px;margin-top:12px;">O Que Dizem Nossos Pacientes</h2>
+    <!-- FAQ -->
+    <section style="background:#F8FAFC;padding:100px 24px">
+      <div style="max-width:800px;margin:0 auto">
+        <div style="text-align:center;margin-bottom:48px">
+          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Dúvidas Frequentes</span>
+          <h2 class="font-heading" style="font-size:40px;margin-top:12px">Perguntas e Respostas</h2>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-          <div class="card-hover testimonial-card" style="background:var(--dark-card);border-radius:16px;padding:32px;">
-            <div style="color:#FBBF24;font-size:18px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p style="color:#E2E8F0;font-size:15px;line-height:1.8;margin-bottom:20px;">"A Emeline me ajudou a superar uma ansiedade que me acompanhava há anos. O tratamento é profissional e muito acolhedor."</p>
-            <div style="display:flex;align-items:center;gap:12px;">
-              <div style="width:44px;height:44px;background:linear-gradient(135deg,#6366F1,#818CF8);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:16px;">M</div>
-              <div>
-                <p style="color:white;font-size:14px;font-weight:600;">M.S.</p>
-                <p style="color:#94A3B8;font-size:13px;">São Paulo</p>
-              </div>
-            </div>
+        <div style="background:#fff;border-radius:20px;padding:32px;border:1px solid #E2E8F0">
+          <div class="faq-item active" onclick="this.classList.toggle('active')">
+            <div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-size:17px;font-weight:600">Como funciona a terapia online?</h3><span class="faq-icon">+</span></div>
+            <div class="faq-answer">As sessões são realizadas por videochamada em horário agendado. Você recebe o link por WhatsApp e participa no conforto da sua casa, com total sigilo e segurança.</div>
           </div>
-          <div class="card-hover testimonial-card" style="background:var(--dark-card);border-radius:16px;padding:32px;">
-            <div style="color:#FBBF24;font-size:18px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p style="color:#E2E8F0;font-size:15px;line-height:1.8;margin-bottom:20px;">"O atendimento online é muito prático. Recebi ferramentas reais que uso no dia a dia para controlar meus pensamentos negativos."</p>
-            <div style="display:flex;align-items:center;gap:12px;">
-              <div style="width:44px;height:44px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:16px;">R</div>
-              <div>
-                <p style="color:white;font-size:14px;font-weight:600;">R.L.</p>
-                <p style="color:#94A3B8;font-size:13px;">Rio de Janeiro</p>
-              </div>
-            </div>
+          <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-size:17px;font-weight:600">Qual o valor da sessão?</h3><span class="faq-icon">+</span></div>
+            <div class="faq-answer">Para saber sobre valores e condições, entre em contato pelo WhatsApp. Garantimos respostas rápidas.</div>
           </div>
-          <div class="card-hover testimonial-card" style="background:var(--dark-card);border-radius:16px;padding:32px;">
-            <div style="color:#FBBF24;font-size:18px;margin-bottom:16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p style="color:#E2E8F0;font-size:15px;line-height:1.8;margin-bottom:20px;">"Finalmente durmo em paz. O tratamento para insônia da Emeline mudou minha qualidade de vida completamente."</p>
-            <div style="display:flex;align-items:center;gap:12px;">
-              <div style="width:44px;height:44px;background:linear-gradient(135deg,#F59E0B,#D97706);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:600;font-size:16px;">A</div>
-              <div>
-                <p style="color:white;font-size:14px;font-weight:600;">A.C.</p>
-                <p style="color:#94A3B8;font-size:13px;">Belo Horizonte</p>
-              </div>
-            </div>
+          <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-size:17px;font-weight:600">Preciso estar passando por algo grave para começar?</h3><span class="faq-icon">+</span></div>
+            <div class="faq-answer">Não. A terapia é indicada tanto em momentos de sofrimento intenso quanto quando você quer se cuidar, se organizar emocionalmente ou se conhecer melhor.</div>
+          </div>
+          <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-size:17px;font-weight:600">Qual a frequência das sessões?</h3><span class="faq-icon">+</span></div>
+            <div class="faq-answer">A mais comum é semanal, com dia e horário fixos. Ajustes podem ser feitos conforme a necessidade.</div>
+          </div>
+          <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-size:17px;font-weight:600">Atende por convênio ou plano de saúde?</h3><span class="faq-icon">+</span></div>
+            <div class="faq-answer">Os atendimentos são particulares. Emito documento para reembolso quando o plano de saúde permite.</div>
+          </div>
+          <div class="faq-item" onclick="this.classList.toggle('active')">
+            <div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-size:17px;font-weight:600">Preciso falar sobre coisas que não quero?</h3><span class="faq-icon">+</span></div>
+            <div class="faq-answer">Não. Você é livre para dizer — e também não dizer — o que quiser durante as sessões. O ritmo é seu.</div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CTA FINAL -->
-    <section style="background:linear-gradient(135deg,var(--primary),#4F46E5);padding:100px 24px;text-align:center;">
-      <div style="max-width:800px;margin:0 auto;">
-        <h2 class="font-heading" style="color:white;font-size:44px;margin-bottom:20px;">Pronta Para Pensar Menos e Descansar Melhor?</h2>
-        <p style="color:rgba(255,255,255,0.85);font-size:18px;line-height:1.7;margin-bottom:40px;">
-          A ansiedade não precisa comandar sua vida. Agende sua sessão gratuita e descubra como a TCC pode te ajudar a "desligar" sua mente.
-        </p>
-        <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20minha%20sess%C3%A3o%20gratuita." target="_blank" style="display:inline-flex;align-items:center;gap:12px;background:white;color:var(--primary);padding:18px 40px;border-radius:12px;text-decoration:none;font-size:18px;font-weight:700;transition:all 0.3s ease;box-shadow:0 4px 20px rgba(0,0,0,0.15);" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 30px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.15)'">
+    <section style="background:linear-gradient(135deg,var(--primary),#4F46E5);padding:100px 24px;text-align:center">
+      <div style="max-width:800px;margin:0 auto">
+        <h2 class="font-heading" style="color:#fff;font-size:44px;margin-bottom:20px">Pronta Para Pensar Menos e Descansar Melhor?</h2>
+        <p style="color:rgba(255,255,255,.85);font-size:18px;line-height:1.7;margin-bottom:40px">A ansiedade não precisa comandar sua vida. Agende sua sessão gratuita e descubra como a TCC pode te ajudar a "desligar" sua mente.</p>
+        <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20minha%20sess%C3%A3o%20gratuita." target="_blank" style="display:inline-flex;align-items:center;gap:12px;background:#fff;color:var(--primary);padding:18px 40px;border-radius:12px;text-decoration:none;font-size:18px;font-weight:700;transition:all .3s ease;box-shadow:0 4px 20px rgba(0,0,0,.15)">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           QUERO AGENDAR MINHA SESSÃO GRATUITA
         </a>
-        <div style="margin-top:24px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap;">
-          <span style="color:rgba(255,255,255,0.8);font-size:14px;">&#10003; Sigilo total</span>
-          <span style="color:rgba(255,255,255,0.8);font-size:14px;">&#10003; Atendimento online</span>
-          <span style="color:rgba(255,255,255,0.8);font-size:14px;">&#10003; Sem compromisso</span>
+        <div style="margin-top:24px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap">
+          <span style="color:rgba(255,255,255,.8);font-size:14px">&#10003; Sigilo total</span>
+          <span style="color:rgba(255,255,255,.8);font-size:14px">&#10003; Atendimento online</span>
+          <span style="color:rgba(255,255,255,.8);font-size:14px">&#10003; Sem compromisso</span>
         </div>
       </div>
     </section>
 
     <!-- CONTATO -->
-    <section id="contato" style="background:var(--dark);padding:80px 24px;">
-      <div style="max-width:1200px;margin:0 auto;">
-        <div style="text-align:center;margin-bottom:48px;">
-          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase;">Contato</span>
-          <h2 class="font-heading" style="color:white;font-size:36px;margin-top:12px;">Fale Comigo</h2>
+    <section id="contato" style="background:var(--dark);padding:80px 24px">
+      <div style="max-width:1200px;margin:0 auto">
+        <div style="text-align:center;margin-bottom:48px">
+          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Contato</span>
+          <h2 class="font-heading" style="color:#fff;font-size:36px;margin-top:12px">Fale Comigo</h2>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
-          <!-- WhatsApp -->
-          <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" style="text-decoration:none;">
-            <div class="card-hover contact-card" style="padding:32px 24px;">
-              <div style="width:64px;height:64px;background:rgba(37,211,102,0.15);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              </div>
-              <h3 style="color:white;font-size:18px;margin-bottom:8px;font-weight:600;">WhatsApp</h3>
-              <p style="color:#25D366;font-size:16px;font-weight:500;">(67) 99802-6970</p>
-              <p style="color:#94A3B8;font-size:13px;margin-top:8px;">Clique para agendar</p>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+          <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" style="text-decoration:none">
+            <div class="card-hover contact-card" style="padding:32px 24px">
+              <div style="width:64px;height:64px;background:rgba(37,211,102,.15);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px"><svg width="32" height="32" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+              <h3 style="color:#fff;font-size:18px;margin-bottom:8px;font-weight:600">WhatsApp</h3>
+              <p style="color:#25D366;font-size:16px;font-weight:500">(67) 99802-6970</p>
+              <p style="color:#94A3B8;font-size:13px;margin-top:8px">Clique para agendar</p>
             </div>
           </a>
-          <!-- Instagram -->
-          <a href="https://www.instagram.com/emelinediaspsi?igsi=aHF4dDZ1azF5Nnp3" target="_blank" style="text-decoration:none;">
-            <div class="card-hover contact-card" style="padding:32px 24px;">
-              <div style="width:64px;height:64px;background:linear-gradient(135deg,rgba(131,58,180,0.15),rgba(253,29,29,0.15));border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-              </div>
-              <h3 style="color:white;font-size:18px;margin-bottom:8px;font-weight:600;">Instagram</h3>
-              <p style="color:#E1306C;font-size:16px;font-weight:500;">@emelinediaspsi</p>
-              <p style="color:#94A3B8;font-size:13px;margin-top:8px;">Siga-me</p>
+          <a href="https://www.instagram.com/emelinediaspsi?igsi=aHF4dDZ1azF5Nnp3" target="_blank" style="text-decoration:none">
+            <div class="card-hover contact-card" style="padding:32px 24px">
+              <div style="width:64px;height:64px;background:linear-gradient(135deg,rgba(131,58,180,.15),rgba(253,29,29,.15));border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+              <h3 style="color:#fff;font-size:18px;margin-bottom:8px;font-weight:600">Instagram</h3>
+              <p style="color:#E1306C;font-size:16px;font-weight:500">@emelinediaspsi</p>
+              <p style="color:#94A3B8;font-size:13px;margin-top:8px">16K+ seguidoras</p>
             </div>
           </a>
-          <!-- Email -->
-          <a href="mailto:emelinediaspsico@gmail.com" style="text-decoration:none;">
-            <div class="card-hover contact-card" style="padding:32px 24px;">
-              <div style="width:64px;height:64px;background:rgba(99,102,241,0.15);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <h3 style="color:white;font-size:18px;margin-bottom:8px;font-weight:600;">E-mail</h3>
-              <p style="color:#818CF8;font-size:15px;font-weight:500;">emelinediaspsico@gmail.com</p>
-              <p style="color:#94A3B8;font-size:13px;margin-top:8px;">Envie uma mensagem</p>
+          <a href="mailto:emelinediaspsico@gmail.com" style="text-decoration:none">
+            <div class="card-hover contact-card" style="padding:32px 24px">
+              <div style="width:64px;height:64px;background:rgba(99,102,241,.15);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <h3 style="color:#fff;font-size:18px;margin-bottom:8px;font-weight:600">E-mail</h3>
+              <p style="color:#818CF8;font-size:15px;font-weight:500">emelinediaspsico@gmail.com</p>
+              <p style="color:#94A3B8;font-size:13px;margin-top:8px">Envie uma mensagem</p>
             </div>
           </a>
         </div>
@@ -482,28 +354,22 @@
     </section>
 
     <!-- FOOTER -->
-    <footer style="background:#0B1120;padding:40px 24px;border-top:1px solid rgba(255,255,255,0.05);">
-      <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <footer style="background:#0B1120;padding:40px 24px;border-top:1px solid rgba(255,255,255,.05)">
+      <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
         <div>
-          <p class="font-heading" style="color:white;font-size:20px;">Emeline Dias | Psicóloga</p>
-          <p style="color:#94A3B8;font-size:13px;margin-top:4px;">A ansiedade não é sua inimiga. CRP 14/05649</p>
+          <p class="font-heading" style="color:#fff;font-size:20px">Emeline Dias | Psicóloga</p>
+          <p style="color:#94A3B8;font-size:13px;margin-top:4px">A ansiedade não é sua inimiga. CRP 14/05649</p>
         </div>
-        <div style="display:flex;gap:12px;">
-          <a href="https://wa.me/5567998026970" target="_blank" class="social-icon" style="background:rgba(37,211,102,0.15);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/emelinediaspsi?igsi=aHF4dDZ1azF5Nnp3" target="_blank" class="social-icon" style="background:rgba(225,48,108,0.15);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="mailto:emelinediaspsico@gmail.com" class="social-icon" style="background:rgba(99,102,241,0.15);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
+        <div style="display:flex;gap:12px">
+          <a href="https://wa.me/5567998026970" target="_blank" class="social-icon" style="background:rgba(37,211,102,.15)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+          <a href="https://www.instagram.com/emelinediaspsi?igsi=aHF4dDZ1azF5Nnp3" target="_blank" class="social-icon" style="background:rgba(225,48,108,.15)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="mailto:emelinediaspsico@gmail.com" class="social-icon" style="background:rgba(99,102,241,.15)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366F1" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
         </div>
-        <p style="color:#475569;font-size:12px;">CRP 14/05649 | &copy; 2026 Emeline Dias. Todos os direitos reservados.</p>
+        <p style="color:#475569;font-size:12px">CRP 14/05649 | &copy; 2026 Emeline Dias. Todos os direitos reservados.</p>
       </div>
     </footer>
 
-    <!-- BOTÃO FLUTUANTE WHATSAPP -->
+    <!-- BOTAO FLUTUANTE WHATSAPP -->
     <a href="https://wa.me/5567998026970?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" class="whatsapp-float" title="Fale conosco pelo WhatsApp">
       <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
