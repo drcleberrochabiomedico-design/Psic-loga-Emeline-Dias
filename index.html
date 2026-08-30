@@ -83,6 +83,23 @@
       .instagram-card-content{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(transparent,rgba(0,0,0,.7))}
       .instagram-follow-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;padding:12px 24px;border-radius:12px;text-decoration:none;font-weight:600;font-size:14px;transition:all .3s ease;border:none;cursor:pointer}
       .instagram-follow-btn:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(225,48,108,.4)}
+      .carousel-wrapper{position:relative;max-width:900px;margin:0 auto;overflow:hidden;border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,.12)}
+      .carousel-track{display:flex;transition:transform .5s ease}
+      .carousel-slide{min-width:100%;position:relative}
+      .carousel-slide img{width:100%;height:auto;display:block;aspect-ratio:16/10;object-fit:cover}
+      .carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;background:rgba(255,255,255,.9);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(0,0,0,.15);transition:all .3s ease;z-index:2;font-size:20px;color:#1E293B}
+      .carousel-btn:hover{background:#fff;transform:translateY(-50%) scale(1.1)}
+      .carousel-btn.prev{left:16px}
+      .carousel-btn.next{right:16px}
+      .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:20px}
+      .carousel-dot{width:10px;height:10px;border-radius:50%;background:#CBD5E1;border:none;cursor:pointer;transition:all .3s ease}
+      .carousel-dot.active{background:var(--primary);width:28px;border-radius:5px}
+      @media(max-width:768px){
+        .carousel-btn{width:36px;height:36px;font-size:16px}
+        .carousel-btn.prev{left:8px}
+        .carousel-btn.next{right:8px}
+        .carousel-slide img{aspect-ratio:4/3}
+      }
       @media(max-width:1024px){
         .hero-bg .hero-content-grid{grid-template-columns:1fr !important;gap:40px !important}
         .hero-photo{width:300px;height:360px;margin:0 auto}
@@ -335,6 +352,39 @@
       </div>
     </section>
 
+    <!-- CARROSSEL -->
+    <section style="background:#fff;padding:100px 24px">
+      <div style="max-width:1200px;margin:0 auto">
+        <div style="text-align:center;margin-bottom:48px" class="animate-on-scroll">
+          <span style="color:var(--primary);font-size:14px;font-weight:600;letter-spacing:2px;text-transform:uppercase">Processo Terapêutico</span>
+          <h2 class="font-heading" style="font-size:40px;margin-top:12px">Como Funciona o Tratamento</h2>
+          <p style="color:#64748B;font-size:16px;margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto">Conheça os mecanismos que vão te ajudar a transformar a ansiedade em algo que você consegue ler, direcionar e manejar.</p>
+        </div>
+        <div class="carousel-wrapper animate-on-scroll">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide"><img src="images/slide-01.png" alt="Mecanismo 1 - Transformar sensação difusa em mapa do momento" /></div>
+            <div class="carousel-slide"><img src="images/slide-02.png" alt="Mecanismo 2 - Enxergar os gatilhos antes que virem crise" /></div>
+            <div class="carousel-slide"><img src="images/slide-03.png" alt="Mecanismo 3 - Atravessar picos com mais direção" /></div>
+            <div class="carousel-slide"><img src="images/slide-04.png" alt="Mecanismo 4 - Reorganizar a rotina para sustentar estabilidade" /></div>
+            <div class="carousel-slide"><img src="images/slide-05.png" alt="O que este processo entrega na prática" /></div>
+            <div class="carousel-slide"><img src="images/slide-06.png" alt="Pare de tentar aguentar - a ansiedade tem leitura e direção" /></div>
+            <div class="carousel-slide"><img src="images/slide-07.png" alt="O resultado esperado - menos travamento, mais controle interno" /></div>
+          </div>
+          <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+          <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots">
+          <button class="carousel-dot active" onclick="goToSlide(0)"></button>
+          <button class="carousel-dot" onclick="goToSlide(1)"></button>
+          <button class="carousel-dot" onclick="goToSlide(2)"></button>
+          <button class="carousel-dot" onclick="goToSlide(3)"></button>
+          <button class="carousel-dot" onclick="goToSlide(4)"></button>
+          <button class="carousel-dot" onclick="goToSlide(5)"></button>
+          <button class="carousel-dot" onclick="goToSlide(6)"></button>
+        </div>
+      </div>
+    </section>
+
     <section id="especialidades" style="background:#F8FAFC;padding:100px 24px">
       <div style="max-width:1200px;margin:0 auto">
         <div style="text-align:center;margin-bottom:60px" class="animate-on-scroll">
@@ -558,6 +608,18 @@
       function closeMobileMenu(){var e=document.getElementById('mobileMenu'),t=document.querySelector('.hamburger');e.classList.remove('active');t.classList.remove('active');document.body.style.overflow=''}
       var observer=new IntersectionObserver(function(e){e.forEach(function(t){if(t.isIntersecting){t.target.classList.add('visible');observer.unobserve(t.target)}})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
       document.querySelectorAll('.animate-on-scroll').forEach(function(e){observer.observe(e)});
+      var currentSlide=0;var totalSlides=7;var carouselInterval;
+      function updateCarousel(){document.getElementById('carouselTrack').style.transform='translateX(-'+currentSlide*100+'%)';document.querySelectorAll('.carousel-dot').forEach(function(d,i){d.classList.toggle('active',i===currentSlide)})}
+      function moveCarousel(dir){currentSlide=(currentSlide+dir+totalSlides)%totalSlides;updateCarousel();resetAutoplay()}
+      function goToSlide(i){currentSlide=i;updateCarousel();resetAutoplay()}
+      function resetAutoplay(){clearInterval(carouselInterval);carouselInterval=setInterval(function(){moveCarousel(1)},5000)}
+      carouselInterval=setInterval(function(){moveCarousel(1)},5000);
+      var carouselEl=document.querySelector('.carousel-wrapper');
+      carouselEl.addEventListener('mouseenter',function(){clearInterval(carouselInterval)});
+      carouselEl.addEventListener('mouseleave',function(){resetAutoplay()});
+      var touchStartX=0;
+      carouselEl.addEventListener('touchstart',function(e){touchStartX=e.touches[0].clientX;clearInterval(carouselInterval)});
+      carouselEl.addEventListener('touchend',function(e){var diff=touchStartX-e.changedTouches[0].clientX;if(Math.abs(diff)>50){diff>0?moveCarousel(1):moveCarousel(-1)}resetAutoplay()});
     </script>
 
   </body>
